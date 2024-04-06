@@ -1,4 +1,4 @@
-## End to end machine learning project: Predicting the score of students: 
+## End to end machine learning project: Predicting the score of students 
 
 Deploying a web application that predict the score of students in the service Cloud AWS.
 
