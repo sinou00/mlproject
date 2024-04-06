@@ -4,7 +4,8 @@ Deploying a web application that predict the score of students in the service Cl
 
 0. Demo:
 
-![Alt Text](gif/Predict test score.gif)
+
+![Predict Test Score](gif/Predict test score.gif)
 
 
 1. EDA and Feature selection: 
