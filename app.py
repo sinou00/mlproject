@@ -6,9 +6,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
-application=Flask(__name__)
+app =Flask(__name__)
 
-app=application
+
 ## Route for a home page
 
 @app.route('/')
@@ -18,7 +18,7 @@ def index():
 @app.route('/predictdata',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
-        return render_template('home.html')
+        return render_template('home1.html')
     else:
         data=CustomData(
             gender=request.form.get('gender'),
@@ -38,8 +38,10 @@ def predict_datapoint():
         print("Mid Prediction")
         results=predict_pipeline.predict(pred_df)
         print("after Prediction")
-        return render_template('home.html',results=results[0])
+        return render_template('home1.html',results=results[0])
 
-if __name__=="__main__":
-    
-    app.run(host="0.0.0.0",port=8080)  
+if __name__=='__main__':
+
+    app.run(debug=True)
+    print("Running on http://127.0.0.1:5000/")
+  

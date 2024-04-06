@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Performance Indicator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="login-container">
+       <h1>Student Exam Performance Indicator</h1>
+       <form action="{{ url_for('predict_datapoint')}}" method="post" class="form">
+            <h2>Predict Student Exam Performance</h2>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" class="form-control" name="gender" required>
+                    <option disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ethnicity">Race or Ethnicity:</label>
+                <select id="ethnicity" class="form-control" name="ethnicity" required>
+                    <option disabled selected>Select Ethnicity</option>
+                    <option value="group A">Group A</option>
+                    <option value="group B">Group B</option>
+                    <option value="group C">Group C</option>
+                    <option value="group D">Group D</option>
+                    <option value="group E">Group E</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="parental_level_of_education">Parental Level of Education:</label>
+                <select id="parental_level_of_education" class="form-control" name="parental_level_of_education" required>
+                    <option disabled selected>Select Parent Education</option>
+                    <option value="associate's degree">associate's degree</option>
+                    <option value="bachelor's degree">bachelor's degree</option>
+                    <option value="high school">high school</option>
+                    <option value="master's degree">master's degree</option>
+                    <option value="some college">some college</option>
+                    <option value="some high school">some high school</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="lunch">Lunch Type:</label>
+                <select id="lunch" class="form-control" name="lunch" required>
+                    <option disabled selected>Select lunch Type</option>
+                    <option value="free/reduced">free/reduced</option>
+                    <option value="standard">standard</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="test_preparation_course">Test Preparation Course:</label>
+                <select id="test_preparation_course" class="form-control" name="test_preparation_course" required>
+                    <option disabled selected>Select Test Course</option>
+                    <option value="none">None</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            
+
+            <!-- Add other form fields here -->
+            <div class="form-group">
+                <label for="writing_score">Writing Score out of 100:</label>
+                <input id="writing_score" class="form-control" type="number" name="writing_score" placeholder="Enter Writing Score (0-100)" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="reading_score">Reading Score out of 100:</label>
+                <input id="reading_score" class="form-control" type="number" name="reading_score" placeholder="Enter Reading Score (0-100)" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Predict Exam Performance">
+            </div>
+        </form>
+        <h2>Prediction: {{results}}</h2>
+    </div>
+</body>
+</html>
